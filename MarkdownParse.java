@@ -15,10 +15,17 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
+
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 break;
             }
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            // Checks to see if links are present in document or if all lnks have already been printed
+
+            if (nextCloseBracket + 1 == openParen) {
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+            }
+            // Only adds text inside parentheses if it is actually a link (parentheses must be right after closed brackets)
+
             currentIndex = closeParen + 1;
         }
         return toReturn;
