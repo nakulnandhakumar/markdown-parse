@@ -29,6 +29,7 @@ public class MarkdownParse {
             }
             // Only adds text inside parentheses if it is actually a link (parentheses must be right after closed brackets)
 
+            // toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
         return toReturn;
