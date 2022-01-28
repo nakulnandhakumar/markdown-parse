@@ -1,1 +1,5 @@
-This is a test file. [Hello](link.com) and [AnotherLik](another.com)
+This is a file with a few words here at the beginning.
+
+[Link](somewords)
+
+[]()
