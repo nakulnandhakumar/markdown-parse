@@ -18,7 +18,7 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testGetLinks() throws IOException{
+    public void testGetLinks1() throws IOException{
         Path fileName = Path.of("test-file-1.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
@@ -28,28 +28,18 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException{
-        Path fileName = Path.of("test-file-3.md");
-        String contents = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(contents);
-
-        assertEquals(List.of(), links);
-    }
-
-    @Test
-    public void testGetLinks3() throws IOException{
         Path fileName = Path.of("test-file-2.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
 
-        assertEquals(List.of("link.com", "another.com"), links);
+        assertEquals(List.of("somewords", ""), links);
     }
 
     @Test
-    public void testGetLinks4() throws IOException{
-        Path fileName = Path.of("test-file-4.md");
+    public void testGetLinks3() throws IOException{
+        Path fileName = Path.of("test-file-3.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-
-        assertEquals(List.of("somewords", ""), links);
+        assertEquals(List.of(), links);
     }
 }
