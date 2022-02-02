@@ -32,7 +32,7 @@ public class MarkdownParseTest {
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
 
-        assertEquals(List.of("somewords", ""), links);
+        assertEquals(List.of("somewords"), links);
     }
 
     @Test
