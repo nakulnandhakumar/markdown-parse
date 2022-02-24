@@ -28,9 +28,7 @@ public class MarkdownParse {
                 // makes sure that there is text inside the parentheses and that an empty string isn't added to the list
             }
             // Only adds text inside parentheses if it is actually a link (parentheses must be right after closed brackets)
-
-            //toReturn.add(markdown.substring(openParen + 1, closeParen));
-            // this is a changed line
+            
             currentIndex = closeParen + 1;
         }
         return toReturn;
