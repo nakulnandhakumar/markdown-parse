@@ -21,8 +21,8 @@ public class MarkdownParse {
             }
             // Checks to see if links are present in document or if all lnks have already been printed
 
-            if (nextCloseBracket + 1 == openParen) {
-                if (openParen + 1 != closeParen && markdown.charAt(nextOpenBracket-1) != '!') {
+            if (nextCloseBracket + 1 == openParen && nextCloseBracket + 1 < markdown.length()) {
+                if (openParen + 1 != closeParen && nextOpenBracket-1 >= 0 && markdown.charAt(nextOpenBracket-1) != '!') {
                     toReturn.add(markdown.substring(openParen + 1, closeParen));
                 }
                 // makes sure that there is text inside the parentheses and that an empty string isn't added to the list
